@@ -1,0 +1,37 @@
+#微服务配置
+spring:
+  application:
+    name: media
+  servlet:
+    multipart:
+      max-file-size: 50MB  # 允许的最大文件大小
+      max-request-size: 50MB  # 允许的最大请求大小（包括所有文件)
+  cloud:
+    nacos:
+      server-addr: 192.168.101.128:8848
+      discovery:
+        service: media
+        namespace: ${spring.profiles.active}
+        group: tiktok
+      config:
+        namespace: ${spring.profiles.active}
+        group: tiktok
+        file-extension: yaml
+        refresh-enabled: true
+        extension-configs:
+          - data-id: media-${spring.profiles.active}.yaml
+            group: tiktok
+            refresh: true
+        shared-configs:
+          - data-id: swagger-${spring.profiles.active}.yaml
+            group: tiktok
+            refresh: true
+          - data-id: logging-${spring.profiles.active}.yaml
+            group: tiktok
+            refresh: true
+          - data-id: redis.yaml
+            group: tiktok
+            refresh: true
+  profiles:
+    active: dev
+

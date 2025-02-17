@@ -1,0 +1,37 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: localhost:3306/dianping
+    username: root
+    password: glj
+  data:
+    redis:
+      database: 0
+      host: 192.168.101.128
+      port: 6379
+      password: glj
+      lettuce:
+        pool:
+          max-active: 8 #最大连接
+          max-idle: 8 #最大空闲连接
+          min-idle: 2 #最小空闲连接
+          max-wait: 100ms #连接等待时间
+  jackson:
+    default-property-inclusion: non_null # JSON处理时忽略非空字段
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
+
+mybatis-plus:
+  type-aliases-package: com.dp.entity # 别名扫描包
+logging:
+  level:
+    com.dp: debug
+minio:
+  bucket: dianping
+  endpoint: http://192.168.101.128:9000
+  accessKey: minioadmin
+  secretKey: minioadmin

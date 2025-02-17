@@ -1,0 +1,13 @@
+POST http://localhost:8080/upload/blog
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="file"; filename="test.mp4"
+Content-Type: application/octet-stream
+
+< C:\Users\张利宁\Videos\屏幕录制\test.mp4
+
+###
+
+GET http://localhost:8080/upload/blog/delete?name=6cf153cc12034e28ae60a358ce655f56
+

@@ -1,0 +1,16 @@
+
+### 上传文件
+POST localhost:12000/media/upload/courseFile?userId=1&productionId=1
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="file"; filename="1.jpg"
+Content-Type: application/octet-stream
+
+< C:\Users\张利宁\Videos\屏幕录制\test.mp4
+
+### 查询作品对应文件
+GET localhost:12000/media/select/courseFile?productionId=1
+
+###下载文件
+GET localhost:12000/media/download/courseFile?fileId=3523818b-74b1-4d00-ae31-d8688670a0d6
