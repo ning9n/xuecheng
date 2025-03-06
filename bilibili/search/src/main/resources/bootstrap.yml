@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: search
+  cloud:
+    nacos:
+      server-addr: 192.168.101.128:8848
+      discovery:
+        namespace: dev
+        group: bilibili
+      config:
+        namespace: dev
+        group: bilibili
+        file-extension: yaml
+        refresh-enabled: true
+        shared-configs:
+          - data-id: swagger-${spring.profiles.active}.yaml
+            group: bilibili
+            refresh: true
+          - data-id: logging-${spring.profiles.active}.yaml
+            group: bilibili
+            refresh: true
+  profiles:
+    active: dev
+elasticsearch:
+  hostList: http://192.168.101.128:9200

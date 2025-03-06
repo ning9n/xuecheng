@@ -3,6 +3,7 @@ package com.xuecheng.content.model.po;
 import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -13,7 +14,7 @@ import java.time.LocalDateTime;
  * 课程发布
  * </p>
  *
- * @author zln
+ * @author itcast
  */
 @Data
 @TableName("course_publish")
@@ -114,17 +115,20 @@ public class CoursePublish implements Serializable {
     /**
      * 发布时间
      */
+    @JsonFormat(shape = JsonFormat.Shape.STRING,pattern = "yyyy-MM-dd HH:mm:ss")
     @TableField(fill = FieldFill.INSERT)
     private LocalDateTime createDate;
 
     /**
      * 上架时间
      */
+    @JsonFormat(shape = JsonFormat.Shape.STRING,pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime onlineDate;
 
     /**
      * 下架时间
      */
+    @JsonFormat(shape = JsonFormat.Shape.STRING,pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime offlineDate;
 
     /**

@@ -1,7 +1,6 @@
 package com.xuecheng.content.model.po;
 
 import com.baomidou.mybatisplus.annotation.*;
-import lombok.Builder;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -12,7 +11,7 @@ import java.time.LocalDateTime;
  * 课程基本信息
  * </p>
  *
- * @author zln
+ * @author itcast
  */
 @Data
 @TableName("course_base")

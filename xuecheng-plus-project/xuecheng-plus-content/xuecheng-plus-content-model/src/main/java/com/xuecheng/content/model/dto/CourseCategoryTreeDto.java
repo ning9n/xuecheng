@@ -1,25 +1,20 @@
 package com.xuecheng.content.model.dto;
 
 import com.xuecheng.content.model.po.CourseCategory;
-import lombok.Builder;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
 
-import java.io.Serializable;
 import java.util.List;
 
 /**
- * @description 课程分类树型结点dto
  * @author Mr.M
- * @date 2022/9/7 15:16
  * @version 1.0
+ * @description TODO
+ * @date 2023/2/12 11:51
  */
-@EqualsAndHashCode(callSuper = true)
 @Data
-@NoArgsConstructor
-public class CourseCategoryTreeDto extends CourseCategory implements Serializable {
+public class CourseCategoryTreeDto extends CourseCategory implements java.io.Serializable {
 
-  List<CourseCategoryTreeDto> childrenTreeNodes;
+   //子节点
+   List<CourseCategoryTreeDto> childrenTreeNodes;
 
 }

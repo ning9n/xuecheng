@@ -1,0 +1,36 @@
+PUT /production
+{
+  "mappings": {
+    "properties": {
+      "id":{
+        "type": "long"
+      },
+      "title":{
+        "type": "text",
+        "analyzer": "ik_smart"
+      },
+      "duration":{
+        "type": "long"
+      },
+      "platCount":{
+        "type": "integer"
+      },
+      "likeCount":{
+        "type": "integer"
+      },
+      "commentCount":{
+        "type": "integer"
+      },
+      "favouriteCount":{
+        "type": "integer"
+      },
+      "createTime":{
+        "type": "date"
+      },
+      "createUser":{
+        "type": "long",
+        "index": false
+      }
+    }
+  }
+}

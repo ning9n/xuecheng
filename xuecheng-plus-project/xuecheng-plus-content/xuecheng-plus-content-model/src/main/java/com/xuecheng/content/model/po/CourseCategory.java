@@ -4,14 +4,13 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
 import java.io.Serializable;
-import java.util.Objects;
 
 /**
  * <p>
  * 课程分类
  * </p>
  *
- * @author zln
+ * @author itcast
  */
 @Data
 @TableName("course_category")
@@ -55,16 +54,4 @@ public class CourseCategory implements Serializable {
     private Integer isLeaf;
 
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        CourseCategory that = (CourseCategory) o;
-        return Objects.equals(id, that.id);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
-    }
 }

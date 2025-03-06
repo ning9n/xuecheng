@@ -37,7 +37,6 @@ public class UploadServiceImpl implements UploadService {
                     .build());
         } catch (Exception e) {
             log.error("上传文件失败");
-            e.printStackTrace();
             throw new RuntimeException(e);
         }
         return filename;
